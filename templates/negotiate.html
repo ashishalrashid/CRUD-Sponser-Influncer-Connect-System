@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponser connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chooselogin.css') }}" />
+  </head>
+  <div id="top">
+    <body>
+    
+        <p>Sponsor Connect</p>
+    </div>
+
+    <div id="log">
+        <form action="/negotiate/{{sid}}/{{cid}}/{{iid}}" method="POST">
+        <p>Enter New Payment </p>
+        <input type="Text" name="new_pay" id="username", placeholder="1000000" required>
+        <input type="submit" value="Submit">
+    </form>
+        </div>
+
+

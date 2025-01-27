@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponser connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chooselogin.css') }}" />
+  </head>
+  <div id="top">
+    <body>
+    
+        <p>Sponsor Connect</p>
+    </div>
+
+    <div id="log">
+        <form action="/editcamp/{{sid}}/{{cid}}" method="POST">
+        <p>Enter Campaign Name</p>
+        <input type="Text" name="camp_name" id="username", placeholder="Elden Ring 2" required>
+        <p>Enter The Description</p>
+        <input type="text" name="camp_desc" id="password", placeholder="The Sequal To The Highest Rated Game Of All Time" required>
+        <input type="submit" value="Submit">
+    </form>
+        </div>
+
+

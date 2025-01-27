@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponser connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/viewsp.css') }}" />
+  </head>
+  <div id="top">
+    <body>
+    
+        <p>Sponsor Connect</p>
+        <a href="/admindash/{{ aid }}" class="disabled">Home</a>
+        <a href="/">Logout</a>
+    </div>
+
+
+<h1> All Sponser</h1>
+
+<div class="usertable">
+<table>
+    <tr>
+        <th>Sponser ID</th>
+        <th>Name</th>
+        <th>Budget</th>
+        <th>Flag</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for sp in sp_all %}
+    <tr>
+        <td>{{sp[0]}}</td>
+        <td>{{sp[1]}}</td>
+        <td>{{sp[3]}}</td>
+
+        {% if sp[4]==0 %}
+        <td >No Reports
+            <a href="/flagspflag/{{aid}}/{{sp[0]}}">Flag</a></td>
+        </td>
+        {% endif %}
+        {% if sp[4]==1 %}
+        <td class="reported">                
+            <p>Reported</p>
+            <a href="/ignorespflag/{{aid}}/{{sp[0]}}">Dismiss</a>
+            <a href="/flagspflag/{{aid}}/{{sp[0]}}">Flag</a></td>
+        {% endif %}
+        {% if sp[4]==2 %}
+        <td class="flagged">FLAGGED
+            <a href="/ignorespflag/{{aid}}/{{sp[0]}}">Dismiss</a>
+        </td>
+        {% endif %}
+
+        <td>
+            <a href="/viewspcamp/{{aid}}/{{sp[0]}}">View</a>
+            <a href="/deletesp/{{aid}}/{{sp[0]}}" id="delete">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+</body>
+

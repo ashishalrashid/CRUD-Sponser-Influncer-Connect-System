@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponser connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/camppage.css') }}" />
+  </head>
+  <div id="top">
+    <body>
+    
+        <p>Sponsor Connect</p>
+        <a href="/sponserdash/{{ sid }}" class="disabled">Home</a>
+        <a href="/">Logout</a>
+    </div>
+
+    <div class="container1">
+        <div class="vertical">
+        <div class="inf_o">
+            <p>Influncer Details</p>
+            <p id="name">{{inf_info[1]}}</p>
+            <p>Reach:{{inf_info[3]}}</p>
+            <p>{{inf_info[4]}}</p>
+            
+            {%if inf_info[5] != 2%}
+            <a href="/reportinf/{{ sid }}/{{cid}}/{{iid}}">Report</a>
+            {% endif %}
+            {% if inf_info[5] == 2 %}
+           <p>FLAGGED INFLUNCER</p>
+            {% endif %}
+    </div>
+{% if ad_info!="gg" %}
+<div class="ad_content">
+    <p>Advertisment Details</p>
+    <p>Message:  {{ad_info[3]}}</p>
+    <p>Description:{{ad_info[4]}}</p>
+    <p>Payment :{{ad_info[5]}}$</p>
+    <p>Status: {{ad_info[6]}}</p>
+</div>
+{% endif %}
+</div>
+
+<div class="vertical2">
+{% if ad_info=="gg" %}
+<div class="right">
+    <form action="/infpage/{{sid}}/{{cid}}/{{iid}}" method="POST">
+        <h1>Contact Influncer</h1>
+        <p>Enter message</p>
+        <input type="Text" name="message" id="username" placeholder="Message" required>
+        <p>Enter The Requirments</p>
+        <input type="text" name="Requirments" id="password" placeholder="2 deliverables , each 60 seconds long" required>
+        <p>Enter payment</p>
+        <input type="text" name="payment" id="Duration" placeholder="100000" required>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endif %}
+
+{% if  ad_info[6]=="waitfor_inf" %}
+<p class="status">WAITING FOR INFLUNCER</p>
+{% endif %}
+
+{% if ad_info[6]=="waitfor_sp" %}
+<p>Incoming offer</p>
+<a href="/approveadreq/{{sid}}/{{cid}}/{{iid}}"> Approve request</a>
+<a href="/negotiate/{{sid}}/{{cid}}/{{iid}}">Negotiate</a>
+{% endif %}
+
+{% if ad_info[6]=="Accepted" %}
+<p class="status_green">Accepted Succesfully</p>
+{% endif %}
+
+
+{% if ad_info[6]=="negotiate_from_inf" %}
+<p>Accept or Negotiate</p>
+<a href="/approveadreq/{{sid}}/{{cid}}/{{iid}}" id="makegreen"> Approve request</a>
+<a href="/negotiate/{{sid}}/{{cid}}/{{iid}}">Negotiate</a>
+{% endif %}
+
+{% if ad_info[6]=="negotiate_from_sponser" %}
+<p class="status">WAITING FOR INFLUNCER</p>
+{% endif %}
+
+{% if ad_info[6]=="Rejected" %}
+<p class="status_red">Status: Rejected</p>
+{% endif %}
+
+{% if ad_info != "gg" and ad_info[6] != "Rejected" %}
+<a href="/dropinf/{{sid}}/{{cid}}/{{iid}}" id="makered">Drop Influncer</a>
+{% endif %}
+</div>
+        </div>
+        </body>

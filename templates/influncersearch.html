@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponser connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/influncersearch.css') }}" />
+  </head>
+
+
+  <div id="top">
+    <p>Sponsor Connect</p>
+    <div class="but">
+    <a href="/sponserdash/{{ sid }}" class="but" >Home</a>
+    <a href="/" class="but">Logout</a>
+</div>
+    </div>
+
+<div id="searchbar">
+    <form action="/influncersearch/{{sid}}/{{cid}}" method="POST">
+        <div>
+        <label>   <input type="radio" name="num" value="Name" checked> Name</label>
+        <label>   <input type="radio" name="num" value="niche">Niche </label>
+        <br>
+        </div>
+        <div>
+        <input type="Text" name="search-inf" id="search-book", placeholder="search Influncer">
+    </div>
+    </form>
+    <a href="/searchbyrange/{{sid}}/{{cid}}" id="byrange">Search by range</a>
+</div>
+
+    <div class="allbooks">
+        {% for inf in all_inf %}
+        <a href="/infpage/{{sid}}/{{cid}}/{{inf[0]}}" class="each">
+            <div class="single-inf">
+                <p id="bname">{{inf[1]}}</p>
+                <p id="bauthor">Reach:{{inf[3]}}</p>
+                <p id="brating">{{inf[4]}}</p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponser connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/viewsp.css') }}" />
+  </head>
+  <div id="top">
+    <body>
+    
+        <p>Sponsor Connect</p>
+        <a href="/admindash/{{ aid }}" class="disabled">Home</a>
+        <a href="/">Logout</a>
+    </div>
+
+
+<h1> Campaigns</h1>
+
+<div class="usertable">
+<table>
+    <tr>
+        <th>Campaign ID</th>
+        <th>Campaign Name</th>
+        <th>Sponser Name</th>
+        <th>Visibility</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for camp in camp_all %}
+    <tr>
+        <td>{{camp[0]}}</td>
+        <td>{{camp[1]}}</td>
+        <td>{{camp[2]}}</td>
+
+        {% if camp[3]==0 %}
+        <td>Public</td>
+        {% endif %}
+        {% if camp[3]==1 %}
+        <td>Private</td>
+        {% endif %}
+
+        <td>
+            <a href="/viewcampad/{{aid}}/{{camp[0]}}" >View</a>
+            <a href="/deletecamp/{{aid}}/{{camp[0]}}" id="delete">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+</body>
+

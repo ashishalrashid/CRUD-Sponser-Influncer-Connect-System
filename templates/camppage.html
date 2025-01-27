@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponser connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/camppage.css') }}" />
+  </head>
+  <div id="top">
+    <body>
+    
+        <p>Sponsor Connect</p>
+        <a href="/sponserdash/{{ sid }}" class="disabled">Home</a>
+        <a href="/">Logout</a>
+    </div>
+
+    <div class="container">
+        
+        <div class="title">
+            <p id="name">{{camp_info[0][1]}}</p>
+            {% set startdate_string =camp_info[0][5] %}
+            {% set enddate_string = camp_info[0][6] %}
+            <p>Campaign duration {{ startdate_string[:10] }} to {{enddate_string[:10]}}</p>
+            <p id="Description">Description :{{ camp_info[0][3] }}</p>
+        </div>
+        <div class="options">
+            <a href="/editcamp/{{sid}}/{{cid}}" id="editcamp" class="opts">Edit details</a>
+            <a href="/influncersearch/{{sid}}/{{cid}}" class="opts">Hire Influncers</a>
+
+            {% if camp_info[0][4]==1 %}
+            <a href="/makecamppublic/{{sid}}/{{cid}}" class="opts">Make Public</a>
+            {% endif %}
+
+            {% if camp_info[0][4]== 0 %}
+            <a href="/makecampprivate/{{sid}}/{{cid}}" class="opts">Make Private</a>
+        {% endif %}
+        </div>
+        
+        <table>
+            <tr>
+                <th>Influncer Name</th>
+                <th>Reach</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            {% for member in inf_members %}
+            <tr>
+                <td>{{member[0]}}</td>
+                <td>{{member[1]}}</td>
+                <td>{{member[2]}}</td>
+                <td>
+                    {% if member[2] != "Rejected"%}
+                    <a href="/dropinf/{{sid}}/{{cid}}/{{member[3]}}">Drop Influncer</a>
+                    {% else %}
+                    <p>No action</p>
+                    {% endif %}
+
+                </td>
+            </tr>
+            {% endfor %}
+
+
+        </table>
+        <a href="/delcamp/{{sid}}/{{cid}}" class="delete">delete Campaign</a>
+        
+        </div>
+        </body>

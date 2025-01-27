@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="waidth=device-waidth, initial-scale=1.0" />
+    <title>Sponser connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admindash.css') }}" />
+  </head>
+  <div id="top">
+    <body>
+    
+        <p>Sponsor Connect</p>
+        <a href="/admindash/{{ aid }}" class="disabled">Home</a>
+        <a href="/">Logout</a>
+    </div>
+
+
+<div aid="welcome-search">
+    <p>Welcome Admin</p>
+    <a href="/createadmin/{{aid}}">Create another Admin</a>
+    <!-- <form action="/dashboard">
+        <input type="Text" name="search-book" aid="search-book", placeholder="search book">
+    </form> -->
+</div>
+
+<div class="options">
+
+  <a href="/viewsp/{{aid}}" class="click"> 
+  <div class="opts">
+    <p>View Sponser</p>
+  </div>
+</a>
+
+<a href="/viewinf/{{aid}}" class="click">
+    <div class="opts">
+        <p>View Influncer</p>
+    </div>
+</a>
+
+<a href="/viewads/{{aid}}" class="click">
+    <div class="opts">
+        <p>View Ad request</p>
+    </div>
+</a>
+
+<a href="/viewcamp/{{aid}}" class="click">
+    <div class="opts">
+        <p>View Campaigns</p>
+    </div>
+</a>
+
+<a href="/spstat/{{aid}}" class="click">
+    <div class="opts">
+        <p>Sponser Statistics</p>
+    </div>
+</a>
+
+<a href="/infstats/{{aid}}" class="click">
+    <div class="opts">
+        <p>Influncer Statistics</p>
+    </div>
+</a>
+
+
+</div>
+
+</body>
+

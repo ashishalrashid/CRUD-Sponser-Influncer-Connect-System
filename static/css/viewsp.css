@@ -1,0 +1,117 @@
+
+body{
+    margin:0px
+}
+div{
+    margin: 0px;
+    display:flex;
+    color: rgb(0, 0, 0);
+    align-items: center;
+    justify-content: space-between;
+}
+
+p{
+    text-align: left;
+    margin-left: 5%;
+    font-size: 30px;
+}
+
+div#top{
+
+    background-color: #007bff;
+    height: 60px;
+}
+#top p{
+    text-align: left;
+    margin-left: 5%;
+    font-size: 30px;
+}
+a{
+    display: inline-block;
+    margin-right:40px;
+    padding: 5px 10px;
+    text-decoration: None;
+    border: 1px solid black;
+    border-radius:10px ;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    color: #000;
+}
+a:hover {
+    background-color: #7d7d7d; 
+}
+
+.options{
+    display: flex;
+    /* background-color: aquamarine; */
+    flex-wrap: wrap;
+    height: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.usertable {
+    display: flex;
+    justify-content: center;
+    margin: 10%;
+    margin-top: 0px;
+}
+
+table {
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+th {
+    background-color: #747474; 
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: #000 solid 1px; 
+    width: 80vh;
+    margin: 10px;
+}
+
+td{
+    border: #000 solid 1px;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+tr{
+    margin: 20px;
+}
+
+p{
+    margin: 10px;
+}
+
+h1{
+    text-align: center;
+}
+
+a#delete{
+    background-color: rgb(250, 43, 43);
+    color: rgb(255, 255, 255);
+    margin:10px 0px ;
+}
+a#delete:hover{
+    background-color: rgb(149, 6, 6);
+}
+
+.disabled{
+    margin-left: auto;
+}
+
+.reported{
+    font-weight: bold;
+    font-size: 15px;
+}
+.reported p{
+    font-size:20px ;
+    text-align: center;
+}
+
+.flagged{
+    font-weight:bold ;
+    background-color: red;
+}

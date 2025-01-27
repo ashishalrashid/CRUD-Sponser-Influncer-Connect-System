@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponser connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sponserdash.css') }}" />
+  </head>
+  <div id="top">
+    <body>
+    
+        <p>Sponsor Connect</p>
+        <a href="/sponserdash/{{ sid }}" class="disabled">Home</a>
+        <a href="/">Logout</a>
+    </div>
+
+    <div class="title_container">
+      <p>Your Campaigns</p>
+    </div>
+
+    <div class="options">
+      <a href="/createcamp/{{sid}}" class="camps"> 
+        <p class="newcamp">Create New Campaign</p>
+      </a>
+
+{% for camp in camp_list %}
+      <a href="/camppage/{{sid}}/{{camp[0]}}" class="camps">
+      <div class="opts">
+        <p class="camp_title">{{camp[1]}}</p>
+        {% set date_string = camp[2] %}
+        <p>End date: {{ date_string[:10] }}</p>
+      </div>
+    </a>
+{% endfor %}
+    
+        </div>

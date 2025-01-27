@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponser connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chooselogin.css') }}" />
+  </head>
+  <div id="top">
+    <body>
+    
+        <p>Sponsor Connect</p>
+    </div>
+
+    <div id="log">
+        <form action="/createsp" method="POST">
+        <p>Enter Username</p>
+        <input type="Text" name="username" id="username", placeholder="username" required>
+        <p>Enter password</p>
+        <input type="password" name="password" id="password", placeholder="password" required>
+        <p>Enter budget</p>
+        <input type="Text" name="budget" id="budget", placeholder="100000" required>
+        <input type="submit" value="Submit">
+        {% if msg %}
+        <p id="invalid">{{msg}}</p>
+        {% endif %}
+    </form>
+        </div>
+
+

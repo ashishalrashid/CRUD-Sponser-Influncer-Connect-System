@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponser connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/influncersearch.css') }}" />
+  </head>
+
+
+  <div id="top">
+    <p>Sponsor Connect</p>
+    <div class="but">
+    <a href="/infdash/{{ iid }}" class="but" >Home</a>
+    <a href="/" class="but">Logout</a>
+</div>
+    </div>
+
+<div id="searchbar">
+    <form action="/searchcamp/{{iid}}" method="POST">
+        <div>
+        <label>   <input type="radio" name="num" value="Name" checked> Name</label>
+        <label>   <input type="radio" name="num" value="Sponser">Sponser</label>
+        <br>
+        </div>
+        <div>
+        <input type="Text" name="search-camp" id="search-book", placeholder="search Campaign">
+    </div>
+    </form>
+    <a href="/searchbybudget/{{iid}}" id="byrange">Search by range</a>
+</div>
+
+    <div class="allbooks">
+        {% for camp in all_camp %}
+        <a href="/campview/{{iid}}/{{camp[0]}}" class="each">
+            <div class="single-camp">
+                <p id="bname">{{camp[1]}}</p>
+                <p id="bauthor">{{camp[3]}}</p>
+                {% set date_string = camp[6] %}
+                <p>End date: {{ date_string[:10] }}</p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+

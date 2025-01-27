@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponser connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chooselogin.css') }}" />
+  </head>
+  <div id="top">
+    <body>
+    
+        <p>Sponsor Connect</p>
+    </div>
+
+    <div id="log">
+        <form action="/createinf" method="POST">
+        <p>Enter Username</p>
+        <input type="Text" name="username" id="username", placeholder="username" required>
+        <p>Enter password</p>
+        <input type="password" name="password" id="password", placeholder="password" required>
+        <p>Enter Follower/subscriber count</p>
+        <input type="text" name="follow" id="follower", placeholder="1000" required>
+        <input type="submit" value="Submit">
+    </form>
+        </div>
+
+

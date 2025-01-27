@@ -1,0 +1,89 @@
+body{
+    margin:0px
+}
+div{
+    margin: 0px;
+    display:flex;
+    color: rgb(0, 0, 0);
+    align-items: center;
+    justify-content: space-between;
+}
+
+p{
+    text-align: left;
+    margin-left: 5%;
+    font-size: 30px;
+}
+
+div#top{
+
+    background-color: #007bff;
+    height: 60px;
+}
+#top p{
+    text-align: left;
+    margin-left: 5%;
+    font-size: 30px;
+}
+a{
+    display: inline-block;
+    margin-right:40px;
+    padding: 5px 10px;
+    text-decoration: None;
+    border: 1px solid black;
+    border-radius:10px ;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    color: #000;
+}
+a:hover {
+    background-color: #7d7d7d; 
+}
+
+.options{
+    display: flex;
+    /* background-color: aquamarine; */
+    flex-wrap: wrap;
+    height: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.opts{
+    /* background-color: rgb(77, 77, 77); */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.click{
+    /* background-color: #874444; */
+    border:black solid 1px;
+    border-radius: 40px;
+    padding: None;
+    width: 25%;
+    height:25vh;
+    margin: 20px;
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.options{
+    display: flex;
+    /* background-color: aquamarine; */
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.disabled{
+    margin-left: auto;
+    background-color: #000;
+    color: #ffffff;
+}
+
+.disabled:hover{
+    background-color: #000;
+}

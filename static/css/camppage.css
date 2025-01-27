@@ -1,0 +1,257 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #top {
+    display: flex;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+    padding: 0% 5%;
+    font-weight: bold;
+    font-size: 20px;
+    height: 10vh;
+  }
+
+  a{
+    display: inline-block;
+    margin-right:20px;
+    padding: 5px 10px;
+    text-decoration: None;
+    border: 1px solid black;
+    border-radius:10px ;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    color: #000;
+    font-size: 15px;
+
+}
+a:hover {
+    background-color: #7d7d7d; 
+}
+
+.disabled{
+    margin-left: auto;
+    background-color: #000;
+    color: #ffffff;
+}
+
+.disabled:hover{
+    background-color: #000;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    /* background-color: #007bff; */
+}
+
+p#name{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.title{
+    font-size:20px ;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.options{
+    margin-top: 30px ;
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.opts{
+    scale: 2;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 40px;
+}
+
+th {
+    background-color: #747474; 
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: #000 solid 1px; 
+    width: 80vh;
+    margin: 10px;
+}
+
+td{
+    border: #000 solid 1px;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+tr{
+    margin: 20px;
+}
+
+p{
+    margin: 10px;
+    font-size: 20px;
+}
+
+h1{
+    text-align: center;
+}
+
+.inf_o{
+    font-size: 20px;
+    border-bottom: #000 1px solid;
+    width: 35vh;
+    /* background-color: aqua; */
+    margin-right: 5% ;
+}
+
+.container1{
+    display: flex;
+    margin :5%;
+    justify-content: space-between;
+}
+
+.vertical{
+    display: flex;
+    flex-direction: column;
+}
+
+.right{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    margin-top:5% ;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+#invalid{
+    color: red;
+}
+
+.vertical2{
+    display: flex;
+    flex-direction: column;
+    /* background-color: #0056b3; */
+    width: 100%;
+    align-items: center;
+}
+
+.vertical2 a {
+    background-color: #007bff;
+    max-width: 40%;
+}
+
+status{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+status-red{
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+}
+
+status-green{
+    font-weight: bold;
+    font-size: 20%;
+    color: green;
+}
+
+.vertical2 a{
+    margin-bottom: 10px;
+}
+
+.vertical2 a:hover{
+    background-color: #333;
+}
+
+#makegreen{
+    background-color: green;
+}
+#makegreen:hover{
+    background-color: rgb(0, 41, 0);
+    color: white;
+}
+#makered{
+    background-color: red;
+}
+
+#makered:hover{
+    background-color: rgb(78, 3, 3);
+    color: white;
+}
+
+.delete{
+    margin-top: 20px;
+    background-color: red;
+    max-width: 10%;
+    align-self: center;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponser connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/viewsp.css') }}" />
+  </head>
+  <div id="top">
+    <body>
+    
+        <p>Sponsor Connect</p>
+        <a href="/admindash/{{ aid }}" class="disabled">Home</a>
+        <a href="/">Logout</a>
+    </div>
+
+
+<h1> All Influncers</h1>
+
+<div class="usertable">
+<table>
+    <tr>
+        <th>Influncer ID</th>
+        <th>Name</th>
+        <th>Reach</th>
+        <th>Flag</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for inf in inf_all %}
+    <tr>
+        <td>{{inf[0]}}</td>
+        <td>{{inf[1]}}</td>
+        <td>{{inf[3]}}</td>
+            {% if inf[5]==0 %}
+            <td >No Reports 
+                <a href="/flaginfflag/{{aid}}/{{inf[0]}}">Flag</a>
+            </td>
+
+            {% endif %}
+            {% if inf[5]==1 %}
+            <td class="reported">
+                <p>Reported</p>
+                <a href="/ignoreinfflag/{{aid}}/{{inf[0]}}">Dismiss</a>
+                <a href="/flaginfflag/{{aid}}/{{inf[0]}}">Flag</a>
+            </td>
+
+            {% endif %}
+            {% if inf[5]==2 %}
+            <td class="flagged">FLAGGED
+                <a href="/ignoreinfflag/{{aid}}/{{inf[0]}}">Dismiss</a>
+            </td>
+            
+            {% endif %}
+        <td>
+            <a href="/viewinfad/{{aid}}/{{inf[0]}}">View</a>
+            <a href="/deleteinf/{{aid}}/{{inf[0]}}" id="delete">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+</body>
+

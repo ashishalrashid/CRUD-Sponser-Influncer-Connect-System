@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponser connect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/spstat.css') }}" />
+  </head>
+  <div id="top">
+    <body>
+    
+        <p>Sponsor Connect</p>
+        <a href="/admindash/{{ aid }}" class="disabled">Home</a>
+        <a href="/">Logout</a>
+    </div>
+    <h1>Influncer Statistics</h1>
+    <div class="container">
+        <div class="statistics">
+            <p>Total Influncers:{{total_inf}}</p>
+            <p>Max Followers of all Influncer :{{min_max_inf[0][0]}}</p>
+            <p>Avg Followers of all Influncer :{{min_max_inf[0][2]}}</p>
+            <p>Min Followers of all Influncer :{{min_max_inf[0][1]}}</p>
+
+            <p>Max Advertisments run by Influncers :{{maxipa}}</p>
+            <p>Avg Advertisments run by Influncers :{{avgipa}}</p>
+        </div>
+        <div class="image">
+        <img src="{{ url_for('static', filename='images/density_plot1.png') }}" alt="Density Plot">
+    </div>
+    </div>
+</body>
+</html>
