@@ -1,0 +1,33 @@
+# Exclude environment variables
+.env
+
+# Exclude virtual environment
+venv/
+
+# Exclude compiled Python files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Exclude IDE settings and editor backups
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Exclude node_modules (if you use Node.js for any front-end tasks)
+node_modules/
+
+# Exclude static assets build outputs (if applicable)
+dist/
+build/
+
+# Exclude coverage reports
+.coverage
+htmlcov/
+
+# Exclude deployment files
+*.env.*
+.DS_Store  # macOS metadata files
+Thumbs.db  # Windows metadata files
